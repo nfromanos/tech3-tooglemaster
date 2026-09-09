@@ -29,6 +29,9 @@ jobs:
         with:
           go-version-file: ./evaluation-service/go.mod
           cache: true
+          
+      - name: Tidy Go modules
+        run: go mod tidy
 
       - name: Download dependencies
         run: go mod download

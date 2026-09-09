@@ -30,6 +30,9 @@ jobs:
           go-version-file: ./auth-service/go.mod
           cache: true
 
+      - name: Tidy Go modules
+        run: go mod tidy
+
       - name: Download dependencies
         run: go mod download
 
