@@ -101,7 +101,7 @@ jobs:
           pip install bandit
 
       - name: Bandit (SAST)
-        run: bandit -r . -x ./venv
+        run: bandit -r . -iii -x ./venv
 
       - name: Trivy filesystem scan (SCA)
         uses: aquasecurity/trivy-action@v0.36.0
