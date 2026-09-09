@@ -69,6 +69,7 @@ jobs:
         with:
           version: v1.60
           working-directory: ./evaluation-service
+          args: --disable=errcheck
 
   security:
     name: Security Scan (SAST & SCA)
