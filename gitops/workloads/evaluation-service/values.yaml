@@ -37,10 +37,9 @@ ingress:
             port:
               number: 8003
 
-
 envVariables:
   PORT: "8004"
-  REDIS_URL: "rediss://tooglemaster-redis-ro.zychal.ng.0001.use1.cache.amazonaws.com:6379"
+  REDIS_URL: "redis://tooglemaster-redis-ro.zychal.ng.0001.use1.cache.amazonaws.com:6379"
   FLAG_SERVICE_URL: "http://flag-service.flag.svc.cluster.local:8002"
   TARGETING_SERVICE_URL: "http://targeting-service.targeting.svc.cluster.local:8003"
   AWS_SQS_URL: "https://sqs.us-east-1.amazonaws.com/091565283934/tooglemaster-sqs"
