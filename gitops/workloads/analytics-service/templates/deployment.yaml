@@ -48,6 +48,11 @@ spec:
           resources:
             {{- toYaml . | nindent 12 }}
           {{- end }}
+          envFrom:
+          - configMapRef:
+              name: '{{ include "analytics-service.fullname" . }}-configmap'
+          - secretRef:
+              name: '{{ include "analytics-service.fullname" . }}-secret'
           {{- with .Values.volumeMounts }}
           volumeMounts:
             {{- toYaml . | nindent 12 }}

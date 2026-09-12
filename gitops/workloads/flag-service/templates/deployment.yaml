@@ -49,9 +49,15 @@ spec:
             {{- toYaml . | nindent 12 }}
           {{- end }}
           {{- with .Values.volumeMounts }}
+          envFrom:
+          - configMapRef:
+              name: '{{ include "flag-service.fullname" . }}-configmap'
+          - secretRef:
+              name: '{{ include "flag-service.fullname" . }}-secret'
           volumeMounts:
             {{- toYaml . | nindent 12 }}
           {{- end }}
+
       {{- with .Values.volumes }}
       volumes:
         {{- toYaml . | nindent 8 }}

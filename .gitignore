@@ -1,2 +1,2 @@
-secret.yaml
+k8s/*/secret.yaml
 .terraform/*
