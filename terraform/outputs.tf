@@ -2,8 +2,9 @@ output "vpc_id" {
   value = module.network.vpc_id
 }
 
-output "ecr_repository_url" {
-  value = module.ecr.repository_url
+output "ecr_repository_urls" {
+  description = "URL de cada repositório ECR, por serviço"
+  value       = { for name, repo in module.ecr : name => repo.repository_url }
 }
 
 output "rds-auth-service-endpoint" {

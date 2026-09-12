@@ -1,6 +1,5 @@
 name: analytics-service CI/CD
 
-
 on:
   pull_request:
   push:
