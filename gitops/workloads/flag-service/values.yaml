@@ -45,7 +45,7 @@ ingress:
       paths:
         - path: /flag
           pathType: Prefix
-            backend:
+          backend:
             service:
               name: flag-service
               port:
