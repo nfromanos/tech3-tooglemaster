@@ -1,6 +1,6 @@
 replicaCount: 1
 
-namespace: 
+namespace: targeting
 
 image:
   repository: 091565283934.dkr.ecr.us-east-1.amazonaws.com/targeting-service
