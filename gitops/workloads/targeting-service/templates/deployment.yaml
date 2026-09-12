@@ -48,12 +48,12 @@ spec:
           resources:
             {{- toYaml . | nindent 12 }}
           {{- end }}
-          {{- with .Values.volumeMounts }}
           envFrom:
           - configMapRef:
               name: '{{ include "targeting-service.fullname" . }}-configmap'
           - secretRef:
               name: '{{ include "targeting-service.fullname" . }}-secret'
+          {{- with .Values.volumeMounts }}
           volumeMounts:
             {{- toYaml . | nindent 12 }}
           {{- end }}
