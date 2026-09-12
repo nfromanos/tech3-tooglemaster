@@ -10,29 +10,11 @@ imagePullSecrets: []
 nameOverride: "targeting-service"
 fullnameOverride: "targeting-service"
 
-# This is for setting up a service more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/
 service:
-  # This sets the service type more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
   type: ClusterIP
-  # This sets the ports more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#field-spec-ports
   port: 8003
   targetPort: 8003
 
-apiVersion: v1
-kind: Service
-metadata:
-  name: targeting-service
-  namespace: targeting
-spec:
-  selector:
-    app.kubernetes.io/name: targeting-service
-  ports:
-  - name: http
-    protocol: TCP
-    port: 8003
-    targetPort: 8003
-
-# This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
 ingress:
   enabled: false
   className: ""
@@ -63,11 +45,10 @@ resources:
     cpu: "1000m"
     memory: "512Mi"
 
-# This is to setup the liveness and readiness probes more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
 livenessProbe:
   httpGet:
     path: /health
-    port: 8003
+    port: 8004
   initialDelaySeconds: 10
   periodSeconds: 5
   timeoutSeconds: 3
@@ -75,5 +56,5 @@ livenessProbe:
 readinessProbe:
   httpGet:
     path: /health
-    port: 8003
+    port: 8004
   periodSeconds: 5
