@@ -42,13 +42,13 @@ ingress:
   hosts:
     - host: tooglemaster.com.br
       paths:
-        - path: /targeting
+        - path: /auth
           pathType: Prefix
           backend:
-          service:
-            name: auth-service
-            port:
-              number: 8001
+            service:
+              name: auth-service
+              port:
+                number: 8001
 
 
 envVariables:

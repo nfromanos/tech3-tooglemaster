@@ -27,10 +27,10 @@ ingress:
         - path: /targeting
           pathType: Prefix
           backend:
-          service:
-            name: targeting-service
-            port:
-              number: 8003
+            service:
+              name: targeting-service
+              port:
+                number: 8003
 
 
 envVariables:

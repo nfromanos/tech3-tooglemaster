@@ -43,13 +43,13 @@ ingress:
   hosts:
     - host: tooglemaster.com.br
       paths:
-        - path: /targeting
+        - path: /flag
           pathType: Prefix
-          backend:
-          service:
-            name: flag-service
-            port:
-              number: 8002
+            backend:
+            service:
+              name: flag-service
+              port:
+                number: 8002
 
 
 envVariables:

@@ -32,10 +32,10 @@ ingress:
         - path: /targeting
           pathType: Prefix
           backend:
-          service:
-            name: evaluation-service
-            port:
-              number: 8003
+            service:
+              name: evaluation-service
+              port:
+                number: 8004
 
 envVariables:
   PORT: "8004"

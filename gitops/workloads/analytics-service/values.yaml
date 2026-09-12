@@ -42,13 +42,13 @@ ingress:
   hosts:
     - host: tooglemaster.com.br
       paths:
-        - path: /targeting
+        - path: /analytics
           pathType: Prefix
-          backend:
-          service:
-            name: analytics-service
-            port:
-              number: 8005
+            backend:
+            service:
+              name: analytics-service
+              port:
+                number: 8005
 
 
 envVariables:
