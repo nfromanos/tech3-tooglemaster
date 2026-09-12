@@ -1,5 +1,8 @@
 FROM golang:1.26-alpine
 
+RUN apk update && apk upgrade --no-cache
+
+
 ENV PORT="8004"
 
 ENV REDIS_URL="redis://localhost:6379"
