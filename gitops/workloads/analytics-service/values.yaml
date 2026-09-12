@@ -1,6 +1,6 @@
 replicaCount: 1
 
-namespace: targeting
+namespace: analytics
 
 image:
   repository: 091565283934.dkr.ecr.us-east-1.amazonaws.com/analytics-service
@@ -30,12 +30,11 @@ ingress:
       paths:
         - path: /analytics
           pathType: Prefix
-            backend:
+          backend:
             service:
               name: analytics-service
               port:
                 number: 8005
-
 
 envVariables:
   PORT: "8005"
